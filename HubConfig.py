@@ -34,7 +34,7 @@ sample_lookup = { # The script will look in the input's keys and fields for a me
     # FIXME so RPE1 cells are Human Retinal Pigment Epithelial Cells, similar to "HRPEpiC" cells, but they are not
     # HRPEpiC.  So I've just specified them as eye cells.
     "RPE1":    SampleInfo("15037", Species.HUMAN),
-    "HEK293T": SampleInfo("12220", Species.HUMAN),
+    "HEK293":  SampleInfo("12220", Species.HUMAN),
 
     "Patski":                   SampleInfo("10007", Species.MOUSE),
     "CH12-LX":                  SampleInfo("10003", Species.MOUSE),
@@ -55,6 +55,6 @@ species_to_custom_vocab = { # Custom props for each species' "vocabulary"
             "Donor": "http://vizhub.wustl.edu/metadata/human/Donor",
         },
     Species.MOUSE: {
-            "Donor": "http://vizhub.wustl.edu/metadata/mouse/Samples",
+            "Sample": "http://vizhub.wustl.edu/metadata/mouse/Samples",
         },
 }

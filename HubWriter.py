@@ -46,13 +46,18 @@ BASE_TRACK_OBJECT = {
 }
 
 class HubWriter:
+    def __init__(self, file_suffix):
+        self.file_suffix = file_suffix
+
     def write_hubs(self, tracks):
-        species_to_tracks = {species: [] for species in HubConfig.Species}
+        species_to_tracks = {}
         for track in tracks:
+            if track.species not in species_to_tracks:
+                species_to_tracks[track.species] = []
             species_to_tracks[track.species].append(track)
 
         for (species, tracks) in species_to_tracks.items():
-            out_name = species.value + "-juiceboxhub"
+            out_name = species.value + self.file_suffix
             with open(out_name, "w") as out:
                 # Header (er, first item) stuff
                 header = HEADER.copy()

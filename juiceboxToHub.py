@@ -46,7 +46,7 @@ def main(args):
             else:
                 tracks_to_write.append(track)
     
-    writer = HubWriter()
+    writer = HubWriter("-juiceboxhub")
     writer.write_hubs(tracks_to_write)
     print("Total tracks written: {}\nTotal tracks skipped or ignored: {}".format(len(tracks_to_write), total_ignored))
 
